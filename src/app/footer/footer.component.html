@@ -1,7 +1,51 @@
-<footer>
+<footer class="footer">
     <div class="footer-container">
         <div class="footer-content">
-            <h3>Recette Roulette &copy; 2025. Tous droits réservés. </h3>
+            <div class="footer-logo">
+                <img [src]="'assets/images/logo.png'" alt="Recette Roulette Logo" class="footer-logo-img">
+                <h2>Recette Roulette</h2>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-links-column">
+                    <h3><i class="fas fa-compass"></i> Navigation</h3>
+                    <ul>
+                        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
+                        <li><a *ngIf="true" routerLink="/mes-recettes" routerLinkActive="active">Mes Recettes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h3><i class="fas fa-user-circle"></i> Compte</h3>
+                    <ul>
+                        <li><a routerLink="/login" routerLinkActive="active">Se connecter</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h3><i class="fas fa-info-circle"></i> À propos</h3>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ currentYear }} Recette Roulette. Tous droits réservés.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+                    <i class="fab fa-pinterest-p"></i>
+                </a>
+            </div>
         </div>
     </div>
 </footer>
