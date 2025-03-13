@@ -1,59 +1,120 @@
-# RecetteRoulette
+# Recette Roulette 🍔
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+Une application web moderne pour découvrir de nouvelles recettes de façon aléatoire et sortir de votre zone de confort culinaire !
 
-## Development server
+![Recette Roulette](assets/images/logo.png)
 
-To start a local development server, run:
+## 📋 Présentation
 
+Recette Roulette est une application qui vous permet de découvrir des recettes au hasard, de les sauvegarder dans vos favoris et de filtrer selon vos préférences. L'application est conçue avec un design coloré inspiré des burgers, avec des animations fluides et une expérience utilisateur intuitive.
+
+## ✨ Fonctionnalités
+
+- **Découverte aléatoire** : Trouvez de nouvelles recettes au hasard pour sortir de votre zone de confort culinaire
+- **Gestion des recettes** : Retrouvez facilement vos recettes des trois dernières semaines
+- **Filtrage personnalisé** : Filtrez les recettes selon le nombre de personnes à votre table
+- **Authentification** : Créez un compte pour sauvegarder vos recettes préférées
+- **Design responsive** : Interface adaptée à tous les appareils (desktop, tablette, mobile)
+
+## 🎨 Design
+
+L'application utilise un thème coloré inspiré des burgers avec :
+
+- **Palette de couleurs** :
+  - Orange burger (primary-color) : #FF6B35
+  - Jaune fromage (accent-color) : #FFCA3A
+  - Vert salade (secondary-color) : #5C946E
+  - Fond blanc cassé : #FFF8F0
+  - Texte presque noir : #2E282A
+
+- **Animations** :
+  - Transitions fluides sur les boutons et les liens
+  - Effet d'underline progressif sur les liens
+  - Animation de flottement sur les images
+  - Effets de survol sur les cartes et les boutons
+
+- **Composants** :
+  - Navbar responsive avec menu mobile
+  - Footer avec liens de navigation et icônes sociales
+  - Formulaire de connexion animé
+  - Cartes de fonctionnalités interactives
+
+## 🛠️ Technologies utilisées
+
+- **Frontend** : Angular 17 (standalone components)
+- **Styles** : CSS personnalisé (variables CSS pour le thème)
+- **Icônes** : Font Awesome
+- **Polices** : Google Fonts (Poppins)
+
+## 🚀 Installation
+
+### Prérequis
+
+- Node.js (v18 ou supérieur)
+- npm (v9 ou supérieur)
+- Angular CLI (v17 ou supérieur)
+
+### Étapes d'installation
+
+1. Clonez le dépôt :
+```bash
+git clone https://github.com/votre-username/recette-roulette.git
+cd recette-roulette
+```
+
+2. Installez les dépendances :
+```bash
+npm install
+```
+
+3. Lancez l'application en mode développement :
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Ouvrez votre navigateur à l'adresse `http://localhost:4200`
 
-## Code scaffolding
+## 📱 Structure du projet
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+recette-roulette/
+├── src/
+│   ├── app/
+│   │   ├── accueil/             # Page d'accueil
+│   │   ├── login/               # Page de connexion
+│   │   ├── mes-recettes/        # Page des recettes de l'utilisateur
+│   │   ├── navbar/              # Composant de la barre de navigation
+│   │   ├── footer/              # Composant du pied de page
+│   │   ├── services/            # Services (authentification, etc.)
+│   │   ├── guards/              # Guards pour la protection des routes
+│   │   └── ...
+│   ├── assets/                  # Images, icônes, etc.
+│   └── styles.css               # Styles globaux
+└── ...
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🔒 Authentification
+
+L'application utilise un système d'authentification simple avec :
+- Connexion par email/mot de passe
+- Protection des routes avec des guards Angular
+- Gestion des sessions utilisateur
+
+## 🌐 Déploiement
+
+Pour déployer l'application en production :
 
 ```bash
-ng generate --help
+ng build --prod
 ```
 
-## Building
+Les fichiers générés se trouveront dans le dossier `dist/` et pourront être déployés sur n'importe quel serveur web statique.
 
-To build the project run:
+## 📝 Contact
 
-```bash
-ng build
-```
+Pour toute question ou demande d'accès, contactez-nous à :
+contact@sullivan-jarry.fr
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📜 Licence
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
