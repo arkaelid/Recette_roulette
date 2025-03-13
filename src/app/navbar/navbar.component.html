@@ -1,0 +1,14 @@
+<nav>
+    <div class="navbar-container">
+        <div class="navbar-logo">
+            <img [src]="'assets/images/logo.png'" alt="Logo">
+            <h1>Recette Roulette</h1>
+        </div>
+        <div class="navbar-links">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+            <a *ngIf="isAuthenticated" routerLink="/mes-recettes" routerLinkActive="active">Mes Recettes</a>
+            <a *ngIf="!isAuthenticated" routerLink="/login" routerLinkActive="active">Se connecter</a>
+            <a *ngIf="isAuthenticated" (click)="onLogout()" style="cursor: pointer;">Se déconnecter</a>
+        </div>
+    </div>
+</nav>
