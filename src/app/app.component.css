@@ -19,4 +19,25 @@ body {
   
   .main-content {
     flex: 1;
+    position: relative;
+  }
+
+  .route-container {
+    position: relative;
+    min-height: 80vh;
+  }
+
+  router-outlet {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  /* Style pour les composants enfants du router-outlet */
+  router-outlet + * {
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    will-change: opacity, transform;
   }

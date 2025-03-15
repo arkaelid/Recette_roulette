@@ -118,3 +118,34 @@ contact@sullivan-jarry.fr
 ## 📜 Licence
 
 Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+
+## 💾 Base de données
+
+Le schéma de la base de données se trouve dans le fichier `database/schema_bdd.sql`. Pour initialiser la base de données :
+
+```bash
+# Pour PostgreSQL
+psql -U username -d database_name -f database/schema_bdd.sql
+```
+
+Pour charger les données de test :
+
+```bash
+# Pour PostgreSQL
+psql -U username -d database_name -f database/seed_data.sql
+```
+
+Le modèle de données comprend les tables suivantes :
+- `utilisateurs` : Informations des utilisateurs
+- `recettes` : Détails des recettes
+- `ingredients` : Liste des ingrédients disponibles
+- `recette_ingredients` : Association entre recettes et ingrédients avec quantités pour différentes portions
+- `recettes_utilisateurs` : Recettes générées pour les utilisateurs
+- `listes_courses` : Listes de courses des utilisateurs
+- `elements_liste` : Éléments des listes de courses
+- `liste_recettes` : Association entre listes de courses et recettes
+
+Le schéma inclut également des fonctions PostgreSQL pour :
+- Générer une recette aléatoire
+- Calculer les quantités d'ingrédients en fonction du nombre de personnes
+- Générer une liste de courses à partir des recettes sélectionnées

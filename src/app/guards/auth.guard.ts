@@ -1,28 +1,24 @@
-import { Injectable, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { map } from 'rxjs';
+import { map, take } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-class AuthGuardService {
-  constructor(private authService: AuthService, private router: Router) {}
-
-  canActivate(): ReturnType<CanActivateFn> {
-    return this.authService.isAuthenticated().pipe(
-      map(isAuthenticated => {
-        if (isAuthenticated) {
-          return true;
-        } else {
-          this.router.navigate(['/login']);
-          return false;
-        }
-      })
-    );
-  }
-}
-
-export const authGuard: CanActivateFn = () => {
-  return inject(AuthGuardService).canActivate();
+export const AuthGuard: CanActivateFn = (route, state) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+  
+  return authService.isAuthenticated().pipe(
+    take(1),
+    map(isAuthenticated => {
+      if (isAuthenticated) {
+        return true;
+      } else {
+        // Rediriger vers la page de connexion avec l'URL de retour
+        router.navigate(['/login'], { 
+          queryParams: { returnUrl: state.url }
+        });
+        return false;
+      }
+    })
+  );
 }; 

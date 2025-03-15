@@ -32,6 +32,7 @@
     z-index: 1;
     border-top: 4px solid var(--primary-color);
     animation: fadeIn 0.5s ease-out forwards;
+    overflow: hidden;
 }
 
 @keyframes fadeIn {
@@ -67,6 +68,14 @@ h2::after {
     border-radius: 3px;
 }
 
+.form-container {
+    position: relative;
+    min-height: 350px;
+    overflow-y: scroll;
+}
+.form-container::-webkit-scrollbar {
+    display: none;
+}
 .form-group {
     margin-bottom: 1.5rem;
     position: relative;
@@ -116,9 +125,31 @@ button {
     overflow: hidden;
     z-index: 1;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-button::before {
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.2);
+}
+
+button::before,
+.submit-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -133,17 +164,20 @@ button::before {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-button:hover {
+button:hover,
+.submit-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
 }
 
-button:hover::before {
+button:hover::before,
+.submit-button:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-button:disabled {
+button:disabled,
+.submit-button:disabled {
     background-color: var(--text-light);
     transform: none;
     box-shadow: none;
@@ -203,4 +237,16 @@ button:disabled {
 
 .signup-link a:hover::after {
     width: 100%;
+}
+
+/* Styles pour l'animation */
+form {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }

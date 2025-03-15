@@ -175,3 +175,19 @@ h3 {
 
 /* Vous pouvez ajouter vos styles globaux en dessous */
 
+/* Styles pour les composants de page */
+app-login, app-accueil, app-mes-recettes, app-detail-recette {
+  display: block;
+  width: 100%;
+  background-color: var(--white);
+  transform-origin: center center;
+}
+
+/* Style pour assurer une transition fluide */
+.page-container {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--white);
+  transform-origin: center center;
+}
+
