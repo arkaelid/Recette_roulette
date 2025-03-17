@@ -11,14 +11,28 @@
                     <h3><i class="fas fa-compass"></i> Navigation</h3>
                     <ul>
                         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
-                        <li><a *ngIf="true" routerLink="/mes-recettes" routerLinkActive="active">Mes Recettes</a></li>
+                        <li><a *ngIf="isAuthenticated" routerLink="/mes-recettes" routerLinkActive="active">Mes Recettes</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links-column">
                     <h3><i class="fas fa-user-circle"></i> Compte</h3>
                     <ul>
-                        <li><a routerLink="/login" routerLinkActive="active">Se connecter</a></li>
+                        <li>
+                            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                             Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a *ngIf="isAuthenticated" routerLink="/mes-recettes" routerLinkActive="active" class="nav-link">
+                             Mes Recettes
+                            </a>
+                        </li>
+                        <li>
+                            <a *ngIf="!isAuthenticated" routerLink="/login" routerLinkActive="active" class="nav-link auth-link">
+                             Se connecter
+                            </a>
+                        </li>   
                         
                     </ul>
                 </div>
